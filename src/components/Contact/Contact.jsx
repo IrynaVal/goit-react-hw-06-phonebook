@@ -1,22 +1,28 @@
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { deleteContact } from 'redux/actions';
+// import PropTypes from 'prop-types';
 
-export const Contact = ({ contact: { id, name, number }, onDeleteContact }) => {
+export const Contact = ({ contact }) => {
+  const dispatch = useDispatch();
+
+  const onDelete = () => dispatch(deleteContact(contact.id));
+
   return (
     <>
-      <p>{name}:</p>
-      <p>{number}</p>
-      <button type="button" onClick={() => onDeleteContact(id)}>
+      <p>{contact.name}:</p>
+      <p>{contact.number}</p>
+      <button type="button" onClick={onDelete}>
         Delete
       </button>
     </>
   );
 };
 
-Contact.propTypes = {
-  contact: PropTypes.exact({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
-  }).isRequired,
-  onDeleteContact: PropTypes.func.isRequired,
-};
+// Contact.propTypes = {
+//   contact: PropTypes.exact({
+//     id: PropTypes.string.isRequired,
+//     name: PropTypes.string.isRequired,
+//     number: PropTypes.string.isRequired,
+//   }).isRequired,
+//   onDeleteContact: PropTypes.func.isRequired,
+// };
