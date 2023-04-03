@@ -6,8 +6,8 @@ import { Contact } from 'components/Contact/Contact';
 export const ContactList = () => {
   const contacts = useSelector(state => state.contacts);
   // console.log(contacts);
-  const filterValue = useSelector(state => state.filter);
-  // console.log(filterValue);
+  const filterValue = useSelector(state => state.filter.value);
+  console.log(filterValue);
   const lowerCaseFilter = filterValue.toLowerCase();
 
   const showFilteredContacts = () =>
