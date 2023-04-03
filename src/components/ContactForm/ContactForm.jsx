@@ -1,8 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { addContact } from 'redux/actions';
+import { addContact } from 'redux/contactsSlice';
 import css from './ContactForm.module.css';
-// import PropTypes from 'prop-types';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -10,8 +9,8 @@ export const ContactForm = () => {
   const handleFormSubmit = evt => {
     evt.preventDefault();
     const form = evt.target;
-    console.log(form.elements.name.value);
-    console.log(form.elements.number.value);
+    // console.log(form.elements.name.value);
+    // console.log(form.elements.number.value);
 
     const repeatName = contacts.find(
       contact => contact.name === form.elements.name.value
@@ -55,7 +54,3 @@ export const ContactForm = () => {
     </form>
   );
 };
-
-// ContactForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// };

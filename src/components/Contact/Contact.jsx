@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/actions';
-// import PropTypes from 'prop-types';
+import { deleteContact } from 'redux/contactsSlice';
+import PropTypes from 'prop-types';
 
 export const Contact = ({ contact }) => {
   const dispatch = useDispatch();
@@ -18,11 +18,10 @@ export const Contact = ({ contact }) => {
   );
 };
 
-// Contact.propTypes = {
-//   contact: PropTypes.exact({
-//     id: PropTypes.string.isRequired,
-//     name: PropTypes.string.isRequired,
-//     number: PropTypes.string.isRequired,
-//   }).isRequired,
-//   onDeleteContact: PropTypes.func.isRequired,
-// };
+Contact.propTypes = {
+  contact: PropTypes.exact({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    number: PropTypes.string.isRequired,
+  }).isRequired,
+};

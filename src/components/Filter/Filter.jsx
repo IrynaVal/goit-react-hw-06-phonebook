@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { changeFilter } from 'redux/actions';
-// import PropTypes from 'prop-types';
+import { changeFilter } from 'redux/filterSlice';
 import css from './Filter.module.css';
 
 export const Filter = () => {
@@ -17,8 +16,3 @@ export const Filter = () => {
     </lable>
   );
 };
-
-// Filter.propTypes = {
-//   value: PropTypes.string.isRequired,
-//   onChange: PropTypes.func.isRequired,
-// };
