@@ -7,7 +7,6 @@ import css from './ContactForm.module.css';
 export const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
-  // const contactsValues = Object.values(contacts);
   const handleFormSubmit = evt => {
     evt.preventDefault();
     const form = evt.target;

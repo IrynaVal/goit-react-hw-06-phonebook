@@ -5,10 +5,8 @@ import { Contact } from 'components/Contact/Contact';
 
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
-  // const contactsValues = Object.values(contacts);
-  // console.log(contactsValues);
   const filterValue = useSelector(getFilter);
-  console.log(filterValue);
+  // console.log(filterValue);
   const lowerCaseFilter = filterValue.value.toLowerCase();
 
   const showFilteredContacts = () =>
